@@ -13,6 +13,21 @@
         "tuple": "cpp",
         "iostream": "cpp",
         "chrono": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "exception": "cpp",
+        "iosfwd": "cpp",
+        "new": "cpp",
+        "stdexcept": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp"
     }
 }
