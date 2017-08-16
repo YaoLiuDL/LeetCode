@@ -4,6 +4,6 @@
     "version": "0.1.0",
     "command": "g++",
     "isShellCommand": true,
-    "args": ["-g","${workspaceRoot}/exist.cpp"],
+    "args": ["-g", "-std=c++11","${workspaceRoot}/FourSum.cpp"],
     "showOutput": "always"
 }
