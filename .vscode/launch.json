@@ -9,6 +9,7 @@
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
+            "miDebuggerPath": "/usr/bin/gdb",          
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",

@@ -1,39 +1,51 @@
 #include <vector>
 #include <algorithm>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
 vector<vector<int>> fourSum(vector<int>& nums, int target){
     sort(nums.begin(), nums.end());
     vector<vector<int>> res;
-    vector<int> oneAnswer;
  
     for(int i = 0; i < nums.size(); i++){
-        while(i > 0 && nums[i] == nums[i - 1]) continue;
         int three_sum = target - nums[i];
-        oneAnswer.push_back(nums[i]);
 
         for(int j = i + 1; j < nums.size(); j++ ){
-            while(j > 0 && nums[j] == nums[j - 1]) continue;
             int two_sum = three_sum - nums[j];
-            oneAnswer.push_back(nums[j]);
 
-            unordered_map<int, int> hash;
-            for(int p = j + 1; p < nums.size(); p++){
-                if(hash.find(nums[p]) != hash.end()){
-                    oneAnswer.push_back(nums[hash[nums[p]]]);
-                    oneAnswer.push_back(nums[p]);
+            int front = j + 1;
+            int back = nums.size() - 1;
+
+            while(front < back){
+                int sum = nums[front] + nums[back];
+                if(sum > two_sum) back--;
+                else if(sum < two_sum) front++;
+                else{
+                    vector<int> oneAnswer;
+                    oneAnswer.push_back(nums[i]);
+                    oneAnswer.push_back(nums[j]);
+                    oneAnswer.push_back(nums[front]);
+                    oneAnswer.push_back(nums[back]);
                     res.push_back(oneAnswer);
-                    oneAnswer.pop_back();
-                    oneAnswer.pop_back();
+                    while(front < back && nums[front] == oneAnswer[2]) front++;
+                    while(back > front && nums[back] == oneAnswer[3]) back--;
+                    
                 }
-                hash[two_sum - nums[p]] = p;
+
             }
-            oneAnswer.pop_back();
+
+            while(j + 1 < nums.size() && nums[j + 1] == nums[j]) j++;
         }
-        oneAnswer.pop_back();
+        while( i + 1 < nums.size() && nums[i + 1] == nums[i]) i++;
     }
 
     return res;
+}
+
+int main(){
+    vector<int> test = {0,0,5,3,-5};
+    int target = 0;
+    vector<vector<int>> res = fourSum(test, target);
+    return 0;
 }
