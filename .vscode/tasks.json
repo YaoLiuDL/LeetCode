@@ -4,6 +4,6 @@
     "version": "0.1.0",
     "command": "g++",
     "isShellCommand": true,
-    "args": ["-g","${workspaceRoot}/groupAnagrams.cpp"],
+    "args": ["-g","${workspaceRoot}/maximalRectangle.cpp"],
     "showOutput": "always"
 }
