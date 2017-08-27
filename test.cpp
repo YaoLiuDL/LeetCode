@@ -8,9 +8,8 @@ using std::endl;
 using std::string;
 
 int main(){
-    int a[10] = {1};
-    for(auto i : a){
-        cout << i << endl;
-    }
+    char ch = 'A';
+
+    cout << (int)(ch << 1) << endl;
     return 0;
 }
