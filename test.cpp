@@ -8,8 +8,6 @@ using std::endl;
 using std::string;
 
 int main(){
-    char ch = 'A';
-
-    cout << (int)(ch << 1) << endl;
+    cout << chs.length << chs[0].length << endl;
     return 0;
 }
